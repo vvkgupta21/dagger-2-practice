@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val appComponent = (application as UserApplication).appComponent
-        val userRegistrationComponent = DaggerUserRegistrationComponent.factory().create(3, appComponent)
+        val userRegistrationComponent = appComponent.getUserRegistrationComponentFactory().create(3)
         userRegistrationComponent.mainActivityInject(this)
         userRegistrationService.registerUser("vvkgupta21@gmail.com", "1111")
     }
