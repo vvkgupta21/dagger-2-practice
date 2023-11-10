@@ -7,8 +7,7 @@ import javax.inject.Singleton
 
 @Module
 abstract class UserRepositoryModule {
-
-    @Singleton
     @Binds
+    @ActivityScope
     abstract fun getSQLRepository(sqlRepository: SQLRepository): UserRepository
 }

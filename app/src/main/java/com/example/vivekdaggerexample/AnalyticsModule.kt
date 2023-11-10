@@ -6,8 +6,10 @@ import javax.inject.Singleton
 
 @Module
 class AnalyticsModule {
+
+    @Singleton
     @Provides
-    fun getAnalyticalModule(): AnalyticsService {
+    fun getAnalyticsService(): AnalyticsService {
         return Mixpanel()
     }
 }

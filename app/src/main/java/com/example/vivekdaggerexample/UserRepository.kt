@@ -9,7 +9,7 @@ interface UserRepository {
     fun saveUser(email: String, password: String)
 }
 
-@Singleton
+@ActivityScope
 class SQLRepository @Inject constructor(private val analyticsService: AnalyticsService) : UserRepository {
     override fun saveUser(email: String, password: String) {
         Log.d("TAG", "User Saved in DB")
