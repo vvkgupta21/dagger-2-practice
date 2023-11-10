@@ -8,8 +8,6 @@ class UserApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        userRegistrationComponent = DaggerUserRegistrationComponent.builder()
-            .notificationServiceModule(NotificationServiceModule(3))
-            .build()
+        userRegistrationComponent = DaggerUserRegistrationComponent.factory().create(3)
     }
 }

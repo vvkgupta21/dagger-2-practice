@@ -6,12 +6,12 @@ import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
-class NotificationServiceModule(private val retryCount: Int) {
+class NotificationServiceModule() {
 
     @Singleton
     @MessageQualifier
     @Provides
-    fun getMessageService(): NotificationService {
+    fun getMessageService(retryCount: Int): NotificationService {
         return MessageService(retryCount)
     }
 
